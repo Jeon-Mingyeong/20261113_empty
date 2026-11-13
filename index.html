@@ -3,39 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="데이터로 질문을 선명하게 만드는 데이터사이언스 졸업생의 포트폴리오" />
-  <title>데이터로 더 나은 질문을 만드는 사람</title>
+  <meta name="description" content="데이터와 딥러닝으로 복잡한 문제를 이해하고 실제 제품으로 연결하는 AI 포트폴리오" />
+  <meta name="theme-color" content="#f7f7f5" />
+  <title>Deep Learning · Intelligence, Made Useful</title>
   <style>
-    :root { --ink:#171827; --muted:#707184; --paper:#f7f7f5; --line:#dedee3; --indigo:#4d4a9c; --orange:#e9764e; }
-    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:var(--paper); font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; }
-    a { color:inherit; text-decoration:none; } .wrap { width:min(1120px,calc(100% - 48px)); margin:0 auto; }
+    :root {
+      --ink:#171827; --muted:#707184; --paper:#f7f7f5; --line:#dedee3;
+      --indigo:#4d4a9c; --orange:#e9764e; --lavender:#b6b4f4;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1120px,calc(100% - 48px)); margin:0 auto; }
     header { display:flex; justify-content:space-between; align-items:center; padding:26px 0; font-size:13px; letter-spacing:.04em; }
-    .mark { font-weight:700; } nav { display:flex; gap:24px; color:var(--muted); } nav a:hover { color:var(--ink); }
-    .hero { min-height:88vh; display:grid; align-content:center; padding:80px 0 120px; }
-    .eyebrow,.label { margin:0 0 20px; color:var(--indigo); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
-    h1 { max-width:850px; margin:0; font-size:clamp(44px,8vw,96px); line-height:1.05; letter-spacing:-.075em; font-weight:700; } h1 em { color:var(--orange); font-style:normal; }
-    .intro { max-width:540px; margin:36px 0 0 10%; color:var(--muted); font-size:18px; } .scroll-cue { display:inline-flex; align-items:center; gap:12px; margin-top:56px; color:var(--muted); font-size:12px; }
-    .scroll-cue::before { content:"↓"; color:var(--orange); font-size:22px; } section { padding:120px 0; border-top:1px solid var(--line); }
-    .section-grid { display:grid; grid-template-columns:1fr 2fr; gap:72px; } .section-grid h2 { margin:0; font-size:clamp(32px,5vw,60px); line-height:1.08; letter-spacing:-.06em; } .section-grid h2 span { color:var(--indigo); }
-    .copy { max-width:640px; font-size:20px; letter-spacing:-.025em; } .copy strong { font-weight:600; } .project-list { margin-top:56px; border-top:1px solid var(--line); }
-    .project { display:grid; grid-template-columns:80px 1fr auto; gap:24px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); } .project-num { color:var(--orange); font-size:13px; } .project h3 { margin:0 0 4px; font-size:20px; letter-spacing:-.04em; } .project p { margin:0; color:var(--muted); font-size:14px; } .project-arrow { color:var(--indigo); font-size:22px; }
-    .closing { background:var(--ink); color:#fff; border:0; } .closing .eyebrow { color:#b6b4f4; } .closing h2 { font-size:clamp(38px,7vw,84px); } .closing h2 span { color:#e6a68f; }
-    .contact { display:flex; flex-wrap:wrap; gap:18px 32px; margin-top:52px; color:#c6c6d0; font-size:14px; } .contact a { border-bottom:1px solid #77778a; padding-bottom:3px; } footer { padding:24px 0; color:var(--muted); font-size:12px; }
-    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease,transform .8s ease; } .reveal.visible { opacity:1; transform:translateY(0); }
-    @media (max-width:700px) { .wrap { width:min(100% - 32px,560px); } header { padding:20px 0; } nav { gap:14px; } .hero { min-height:82vh; padding:60px 0 90px; } .intro { margin:28px 0 0; font-size:16px; } section { padding:80px 0; } .section-grid { display:block; } .section-grid h2 { margin-bottom:36px; } .copy { font-size:18px; } .project { grid-template-columns:42px 1fr 16px; gap:12px; padding:22px 0; } .project h3 { font-size:17px; } .project p { font-size:13px; } }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .reveal { opacity:1; transform:none; transition:none; } }
+    .mark { font-weight:750; letter-spacing:.08em; }
+    nav { display:flex; gap:24px; color:var(--muted); }
+    nav a:hover { color:var(--indigo); }
+    .hero { min-height:88vh; display:grid; align-content:center; padding:80px 0 120px; border:0; }
+    .eyebrow,.label { margin:0 0 20px; color:var(--indigo); font-size:12px; font-weight:750; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { max-width:900px; margin:0; font-size:clamp(46px,8.4vw,100px); line-height:1.02; letter-spacing:-.078em; font-weight:760; }
+    h1 em { color:var(--orange); font-style:normal; }
+    .intro { max-width:570px; margin:36px 0 0 10%; color:var(--muted); font-size:18px; }
+    .scroll-cue { display:inline-flex; align-items:center; gap:12px; margin-top:56px; color:var(--muted); font-size:12px; }
+    .scroll-cue::before { content:"↓"; color:var(--orange); font-size:22px; }
+    section { padding:120px 0; border-top:1px solid var(--line); }
+    .section-grid { display:grid; grid-template-columns:1fr 2fr; gap:72px; }
+    .section-grid h2 { margin:0; font-size:clamp(32px,5vw,60px); line-height:1.08; letter-spacing:-.06em; }
+    .section-grid h2 span { color:var(--indigo); }
+    .copy { max-width:660px; font-size:19px; letter-spacing:-.025em; }
+    .copy strong { font-weight:650; }
+    .muted { color:var(--muted); }
+    .principles { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:42px; }
+    .principle { padding:24px; border:1px solid var(--line); border-radius:4px; }
+    .principle b { display:block; margin-bottom:10px; color:var(--indigo); font-size:13px; letter-spacing:.08em; }
+    .principle p { margin:0; color:var(--muted); font-size:14px; }
+    .stack { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .stack span { padding:8px 13px; border:1px solid var(--line); border-radius:99px; color:var(--muted); font-size:13px; }
+    .project-list { margin-top:56px; border-top:1px solid var(--line); }
+    .project { display:grid; grid-template-columns:80px 1fr auto; gap:24px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); }
+    .project-num { color:var(--orange); font-size:13px; }
+    .project h3 { margin:0 0 4px; font-size:20px; letter-spacing:-.04em; }
+    .project p { margin:0; color:var(--muted); font-size:14px; }
+    .project-arrow { color:var(--indigo); font-size:22px; }
+    .method { margin-top:46px; padding:30px; background:#eeedf5; border-left:3px solid var(--indigo); }
+    .method .label { margin-bottom:12px; }
+    .method p { margin:0; font-size:17px; }
+    .closing { background:var(--ink); color:#fff; border:0; }
+    .closing .eyebrow { color:var(--lavender); }
+    .closing h2 { font-size:clamp(38px,7vw,84px); }
+    .closing h2 span { color:#e6a68f; }
+    .contact { display:flex; flex-wrap:wrap; gap:18px 32px; margin-top:52px; color:#c6c6d0; font-size:14px; }
+    .contact a { border-bottom:1px solid #77778a; padding-bottom:3px; }
+    footer { padding:24px 0; color:var(--muted); font-size:12px; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease,transform .8s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .accent { color:var(--orange); }
+    @media (max-width:700px) {
+      .wrap { width:min(100% - 32px,560px); }
+      header { padding:20px 0; }
+      nav { gap:14px; font-size:12px; }
+      .hero { min-height:82vh; padding:60px 0 90px; }
+      .intro { margin:28px 0 0; font-size:16px; }
+      section { padding:80px 0; }
+      .section-grid { display:block; }
+      .section-grid h2 { margin-bottom:34px; }
+      .copy { font-size:17px; }
+      .principles { grid-template-columns:1fr; }
+      .principle { padding:20px; }
+      .project { grid-template-columns:42px 1fr 16px; gap:12px; padding:22px 0; }
+      .project h3 { font-size:17px; }
+      .project p { font-size:13px; }
+      .method { padding:22px; }
+      .method p { font-size:15px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap"><header><a class="mark" href="#top">DS / PORTFOLIO</a><nav aria-label="주요 메뉴"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></nav></header>
+  <div class="wrap">
+    <header>
+      <a class="mark" href="#top">DL / PORTFOLIO</a>
+      <nav aria-label="주요 메뉴"><a href="#about">Approach</a><a href="#expertise">Expertise</a><a href="#work">Projects</a><a href="#contact">Contact</a></nav>
+    </header>
     <main id="top">
-      <section class="hero" style="border:0"><div class="reveal"><p class="eyebrow">Data Science Graduate · Bootcamp Student</p><h1>숫자 너머의<br /><em>이야기</em>를 읽습니다.</h1><p class="intro">데이터사이언스를 전공하고, 지금은 부트캠프에서 더 빠르게 배우며 더 정확하게 만드는 중입니다. 좋은 분석은 복잡한 답이 아니라, 선명한 질문에서 시작된다고 믿습니다.</p><a class="scroll-cue" href="#about">천천히 더 보기</a></div></section>
-      <section id="about"><div class="section-grid reveal"><div><p class="label">01 / Perspective</p><h2>배운 것을<br /><span>연결</span>합니다.</h2></div><div class="copy"><p><strong>통계와 코딩, 그리고 사람의 맥락.</strong><br />학교에서 익힌 데이터의 언어를 프로젝트에 적용하고, 부트캠프에서 협업과 구현의 속도를 키우고 있습니다.</p><p>데이터를 정리하고, 패턴을 발견하고, 누구나 이해할 수 있는 이야기로 바꾸는 과정이 좋습니다.</p></div></div></section>
-      <section id="work"><div class="section-grid reveal"><div><p class="label">02 / Selected work</p><h2>프로젝트는<br /><span>과정</span>의 기록입니다.</h2></div><div><p class="copy">GitHub에 쌓아 온 프로젝트마다 하나의 질문이 있었습니다. 문제를 정의하고, 데이터를 다루고, 결과를 다음 선택으로 연결했습니다.</p><div class="project-list"><div class="project"><span class="project-num">01</span><div><h3>데이터로 질문하기</h3><p>수집 · 전처리 · 탐색적 분석</p></div><span class="project-arrow">↗</span></div><div class="project"><span class="project-num">02</span><div><h3>패턴을 설명하기</h3><p>모델링 · 시각화 · 인사이트</p></div><span class="project-arrow">↗</span></div><div class="project"><span class="project-num">03</span><div><h3>함께 완성하기</h3><p>협업 · 문서화 · 꾸준한 개선</p></div><span class="project-arrow">↗</span></div></div></div></div></section>
-      <section id="contact" class="closing"><div class="wrap reveal"><p class="eyebrow">03 / Next chapter</p><h2>다음 질문을<br /><span>함께 찾아볼까요?</span></h2><div class="contact"><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub 보기 ↗</a><a href="mailto:hello@example.com">hello@example.com</a></div></div></section>
-    </main><footer>© 2026 · 데이터로 배우고, 더 나은 선택을 만드는 사람</footer>
+      <section class="hero">
+        <div class="reveal">
+          <p class="eyebrow">Deep Learning · Data Science · AI Engineering</p>
+          <h1>모델을 넘어<br /><em>쓸모 있는 지능</em>을 만듭니다.</h1>
+          <p class="intro">데이터의 구조를 이해하고, 딥러닝 모델의 가능성을 실험하며, 기술을 실제 사용자의 문제에 연결합니다. 정확도만 높은 모델보다 신뢰할 수 있고 설명 가능한 AI를 만드는 것이 목표입니다.</p>
+          <a class="scroll-cue" href="#about">아래로 스크롤해 작업 방식을 살펴보세요</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-grid reveal">
+          <div><p class="label">01 / Approach</p><h2>좋은 모델은<br /><span>좋은 질문</span>에서.</h2></div>
+          <div class="copy">
+            <p><strong>문제 정의부터 배포까지, 전체 흐름을 생각합니다.</strong></p>
+            <p>딥러닝은 알고리즘을 선택하는 일에서 끝나지 않습니다. 데이터가 어떤 과정을 거쳐 만들어졌는지 확인하고, 학습과 검증을 분리하고, 적절한 지표로 성능을 평가해야 합니다.</p>
+            <p>저는 문제의 맥락을 먼저 파악한 뒤 가장 단순하면서도 효과적인 접근을 찾습니다. 모델의 결과를 제품과 의사결정에 연결하는 것까지 분석의 일부라고 생각합니다.</p>
+            <div class="principles">
+              <div class="principle"><b>01 — UNDERSTAND</b><p>데이터의 품질과 편향, 문제의 맥락을 먼저 살핍니다.</p></div>
+              <div class="principle"><b>02 — EXPERIMENT</b><p>가설을 세우고 재현 가능한 실험으로 검증합니다.</p></div>
+              <div class="principle"><b>03 — DELIVER</b><p>결과를 이해하기 쉬운 경험과 서비스로 연결합니다.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="expertise">
+        <div class="section-grid reveal">
+          <div><p class="label">02 / Expertise</p><h2>학습하고<br /><span>검증하는</span> 기술.</h2></div>
+          <div class="copy">
+            <p><strong>Deep Learning Foundations</strong><br />신경망의 학습 원리를 이해하고 손실 함수, 최적화, 일반화 관점에서 모델을 분석합니다.</p>
+            <p><strong>Language & Representation</strong><br />임베딩과 의미 유사도, 사전학습 언어 모델을 활용해 비정형 텍스트를 구조화하고 검색·분류 문제에 적용합니다.</p>
+            <p><strong>Model Evaluation</strong><br />데이터 누수와 클래스 불균형을 점검하고, 정확도 하나에 의존하지 않는 평가 기준을 설계합니다.</p>
+            <p><strong>AI Application</strong><br />모델을 API와 웹 서비스에 연결하고, 사용자 입력부터 결과 제공까지 이어지는 흐름을 구현합니다.</p>
+            <div class="stack" aria-label="기술 키워드">
+              <span>Python</span><span>PyTorch</span><span>Neural Networks</span><span>Transformers</span><span>Embedding</span><span>SBERT</span><span>LLM</span><span>Scikit-learn</span><span>Flask</span><span>SQL</span><span>Data Visualization</span>
+            </div>
+            <p class="muted" style="font-size:13px;margin-top:18px">기술 키워드는 학습 및 프로젝트 적용 영역을 나타냅니다. 각 기술의 숙련도와 적용 범위는 프로젝트별로 구분해 설명합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="section-grid reveal">
+          <div><p class="label">03 / Selected work</p><h2>아이디어를<br /><span>작동하는</span> 결과로.</h2></div>
+          <div>
+            <p class="copy">실제 데이터와 사용자의 요구에서 출발한 프로젝트입니다. 모델의 선택뿐 아니라 데이터 처리, 평가 기준, 서비스 구조까지 함께 고민했습니다.</p>
+            <div class="project-list">
+              <a class="project" href="https://github.com/Jeon-Mingyeong/skin-analyzer-streamlit" target="_blank" rel="noreferrer">
+                <span class="project-num">01</span>
+                <div><h3>AI Skin Ingredient Analyzer</h3><p>성분 데이터 정규화 · SBERT 임베딩 · LLM 기반 피부 고민 분석 · Flask API</p></div>
+                <span class="project-arrow">↗</span>
+              </a>
+              <div class="project">
+                <span class="project-num">02</span>
+                <div><h3>Urban Mobility Data Analysis</h3><p>대중교통 데이터 통합 · 탐색적 분석 · 사고 및 지연 패턴 시각화</p></div>
+                <span class="project-arrow">↗</span>
+              </div>
+              <div class="project">
+                <span class="project-num">03</span>
+                <div><h3>From Experiment to Product</h3><p>모델 실험 · 성능 검증 · API 설계 · 사용자 중심 결과 전달</p></div>
+                <span class="project-arrow">↗</span>
+              </div>
+            </div>
+            <div class="method">
+              <p class="label">A principle I follow</p>
+              <p>모델의 성능은 숫자로 측정하지만, 모델의 가치는 <strong>누군가의 문제를 얼마나 잘 해결했는지</strong>로 판단합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="closing">
+        <div class="reveal">
+          <p class="eyebrow">04 / Let's build what matters</p>
+          <h2>다음 가능성을<br /><span>함께 학습해요.</span></h2>
+          <p style="max-width:520px;color:#c6c6d0;font-size:17px">데이터와 딥러닝으로 더 나은 제품과 의사결정을 만드는 일에 관심이 있습니다.</p>
+          <div class="contact">
+            <a href="https://github.com/Jeon-Mingyeong" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="mailto:gdd0524@swu.ac.kr">Email ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>© 2026 · Intelligence, made useful.</footer>
   </div>
-  <script>const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:.16});document.querySelectorAll('.reveal').forEach((element)=>observer.observe(element));</script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
 </body>
 </html>
